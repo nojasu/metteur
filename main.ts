@@ -1,12 +1,12 @@
 forever(function () {
-    if (iscmons.button_is_pressed(pins.P0)) {
+    if (iscmons.button_is_pressed(pins.P1)) {
         while (iscmons.send_nrf24_number(
         42,
         0,
         pins.P6,
         pins.P7
         )) {
-            control.timer1.pauseUntil(1000)
+            control.waitMicros(1000)
         }
     }
 })
